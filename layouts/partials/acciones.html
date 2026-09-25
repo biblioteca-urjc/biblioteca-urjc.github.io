@@ -1,0 +1,42 @@
+{{ $data := .Site.Data }}
+{{ $activities := cond (eq .Site.Language.Lang "es") $data.es.acciones $data.en.activities }}
+{{ with $activities }}
+    {{ if .enable }}
+    {{ "<!-- activities Section Start -->" | safeHTML }}
+      <section class="activities-list section bg-gray">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="title text-center">
+                  {{ with .topTitle }}<h4>{{ . }}</h4>{{ end }}
+                  {{ with .title }}<h2>{{ . }}</h2>{{ end }}
+                  <span class="border"></span>
+                  {{ with .subtitle }}<p>{{ . }}</p>{{ end }}
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            {{ range .item }}
+              {{ $a := . }}
+              <div class="col-12 col-sm-6 col-lg-4 mb-4 d-flex">
+                <article class="post-item activities-card w-100">
+                  {{ if $a.link }}<a href="{{ $a.link | relLangURL }}" class="activities-card-link">{{ end }}
+                    {{ with $a.image }}
+                      <div class="post-thumb--ratio">
+                        <img src="{{ partial "resolve-image" . }}" alt="{{ $a.title }}" loading="lazy" decoding="async">
+                      </div>
+                    {{ end }}
+                    <div class="activities-card-body">
+                      <h4>{{ $a.title }}</h4>
+                      <div class="description small">{{ $a.description | markdownify }}</div>
+                    </div>
+                  {{ if $a.link }}</a>{{ end }}
+                </article>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+    </section>
+  {{ "<!-- activities Section End -->" | safeHTML }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,158 @@
+languageCode = "es-es"
+title = "Biblioteca"
+theme = "navigator-hugo"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
+summaryLength = 10
+enableRobotsTXT = true
+enableGitInfo = false
+pygmentsCodeFences = true
+googleAnalytics = ""
+
+author = "Biblioteca"
+description = "Oficina de Conocimiento y Cultura Libres de la Universidad Rey Juan Carlos: ayudamos a la comunidad universitaria a comprender y aplicar la cultura libre, la publicación en abierto, los datos abiertos y el software libre."
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "JSON", "RSS"]
+
+[params]
+rawBase = "https://gitlab.com/ofilibre/ofilibre.gitlab.io/-/raw/master"
+showLanguageSwitcher = true
+logo = "images/logos/banner-urjc.png"
+menufixed = true
+contacto_form_action = "sendmail.php"
+listeLangues = [
+  { code = "es" },
+  { code = "en" }
+]
+
+footerDescription = "Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere."
+footeraccionesTitle = "acciones"
+footerQuicklinkTitle = "Quicklinks"
+footerofilibreTitle = "ofilibre"
+footerSubscribeTitle = "Subscribe"
+
+[subscription]
+enable = true
+mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074"
+mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074"
+
+[params.preloader]
+enable = false
+preloader = "images/preloader/preloader.gif"
+
+# cookies
+[params.cookies]
+enable = false
+expire_days = 1
+
+# Allow HTML in Markdown pages
+[markup.goldmark.renderer]
+unsafe = true
+
+# Idiomas
+[languages]
+
+# ---------- Español ----------
+[languages.es]
+weight = 1
+languageCode = "es-es"
+title = "Biblioteca"
+contentDir = "content/spanish"
+
+[languages.es.params]
+home = "Inicio"
+dateFormat = "2 January 2006"
+
+[languages.es.params.hero]
+enable = true
+heading = "La OfiLibre en dos minutos"
+description = "En la OfiLibre queremos ayudar a la comunidad universitaria a comprender la cultura libre, la publicación libre, los datos abiertos y el software libre. Para ello nos dedicamos a explicar qué son, cómo funcionan, qué características tienen, y qué beneficios pueden producir, de forma que cualquiera pueda decidir cómo le conviene relacionarse con ellos."
+button = true
+btnText = "Saber más"
+btnURL = "ofilibre"
+videoURL = "https://tv.urjc.es/iframe/5d022dedd68b14cb308b6ae5"
+
+[languages.es.params.blog]
+enable = true
+topTitle = "Últimos artículos publicados"
+title = "Actualidad"
+
+[languages.es.params.contacto]
+enable = true
+topTitle = "Déjanos un mensaje"
+title = "Contacto"
+subtitle = "La OfiLibre es una iniciativa que trata de contar con la participación de toda la comunidad universitaria para que, entre todos, podamos encontrar nuestro camino en el mundo del conocimiento y la cultura libres."
+address = "Despacho 005, planta baja edificio Rectorado. C/ Tulipán s/n, 28933 Móstoles (Madrid)"
+email = "ofilibre@urjc.es"
+x = "https://x.com/OfiLibreURJC"
+mastodon = "https://floss.social/@OfiLibreURJC"
+telegram = "https://t.me/ofilibreurjc"
+instagram = "https://www.instagram.com/ofilibreurjc/"
+gitlab = "https://gitlab.etsit.urjc.es/ofilibre"
+rss = "ndex.xml" 
+mapLatitude = "40.337887"
+mapLongitude = "-3.874810"
+mapMarker = "ontact/marker.png"
+
+[languages.es.params.cta]
+enable = true
+bg = "mages/about/call-to-action/call-to-action-bg-2.jpg"
+title = "Canales de información"
+subtitle = "La OfiLibre mantiene varios canales de información."
+btnText = "Contacto"
+btnURL = "contacto"
+
+# ---------- Inglés ----------
+[languages.en]
+weight = 2
+languageCode = "en-us"
+title = "Biblioteca english"
+contentDir = "content/english"
+
+[languages.en.params]
+home = "Home"
+dateFormat = "January 2, 2006"
+
+[languages.en.params.hero]
+enable = true
+heading = "OfiLibre in Two Minutes"
+description = "At OfiLibre, we aim to help the university community understand free culture, open publishing, open data, and free software. We explain what they are, how they work, what their characteristics are, and what benefits they can bring, so that everyone can decide how they want to engage with them."
+button = true
+btnText = "Learn more"
+btnURL = "ofilibre/"
+videoURL = "https://tv.urjc.es/iframe/5d022dedd68b14cb308b6ae5"
+
+[languages.en.params.blog]
+enable = true
+topTitle = "Latest Published Articles"
+title = "Blog"
+
+[languages.en.params.contact]
+enable = true
+topTitle = "Leave Us a Message"
+title = "Contact"
+subtitle = "OfiLibre is an initiative that seeks the participation of the entire university community so that, together, we can find our path in the world of free knowledge and culture."
+address = "Office 005, ground floor, Rectorate Building. Tulipán Street, 28933 Móstoles (Madrid), Spain"
+email = "ofilibre@urjc.es"
+x = "https://x.com/OfiLibreURJC"
+mastodon = "https://floss.social/@OfiLibreURJC"
+telegram = "https://t.me/ofilibreurjc"
+instagram = "https://www.instagram.com/ofilibreurjc/"
+gitlab = "https://gitlab.etsit.urjc.es/ofilibre"
+rss = "en/index.xml" 
+mapLatitude = "40.337887"
+mapLongitude = "-3.874810"
+mapMarker = "contact/marker.png"
+
+[languages.en.params.cta]
+enable = true
+bg = "images/about/call-to-action/call-to-action-bg-2.jpg"
+title = "Information Channels"
+subtitle = "OfiLibre maintains several information channels."
+btnText = "Contact"
+btnURL = "contacto"

@@ -1,0 +1,33 @@
+enable    : true
+topTitle  : News from OfiLibre
+title     : Open calls and useful links
+item  :
+  - icon  : fas fa-graduation-cap
+    title : MOOC on Open Science and Free Culture
+    link  : https://urjcx.urjc.es/courses/cultura-libre-y-ciencia-abierta/
+    description : >
+      Six thematic modules with texts, videos, and practical exercises to understand what open science and free culture are, and how they affect us.
+
+  - icon  : fas fa-mug-hot
+    title : Cafe con OfiLibre
+    link  : /en/acciones/cafes
+    description : >
+      Every teaching Wednesday at 10:00 AM, join us for 15 minutes at Cafe con OfiLibre via streaming. A relaxed moment to chat about the topics we care about. We cover a different topic each session — just connect and listen, or participate if you feel like it. You can also watch past session recordings.
+
+  - icon  : fas fa-box-archive
+    title : BURJC Digital, renewed!
+    link  : https://burjcdigital.urjc.es
+    description : >
+      Our BURJC Digital (the University's Open Archive) has been updated: new look and more functionality.
+
+  - icon  : fas fa-book
+    title : Open Access Monographs
+    link  : https://monografias.urjc.es/
+    description : >
+      Monographs published by our University's Academia Abierta publishing house, all in open access.
+
+  - icon  : fas fa-chalkboard
+    title : Open Subjects
+    link  : https://online.urjc.es/es/para-futuros-estudiantes/asignaturas-en-abierto
+    description : >
+      Open subjects from our University: teaching materials openly available to everyone.

@@ -1,0 +1,66 @@
+{{ if .Site.Params.blog.enable }}
+{{ "<!-- Blog Section Start -->" | safeHTML }}
+<section class="blog section" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="title text-center" style="padding-bottom: 40px">
+                    {{ with .Site.Params.blog.topTitle }}<h4>{{ . }}</h4>{{ end }}
+                    {{ with .Site.Params.blog.title }}<h2>{{ . }}</h2><span class="border"></span>{{ end }}
+                    {{ with .Site.Params.blog.subtitle }}<p>{{ . }}</p>{{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+            {{ "<!-- single blog post -->" | safeHTML }}
+            <article class="col-12 col-md-4">
+                <div class="post-item mb-0 pb-0">
+                  <div class="post-thumb post-thumb--ratio mb-2 shadow rounded">
+                    <img src="{{ partial "resolve-image" .Params.image }}" alt="{{ .Title }}" loading="lazy" decoding="async">
+                  </div>
+                    
+                    <ul class="list-inline mb-1">
+                        <li class="list-inline-item mr-3 ml-0">
+                            <i class="fas fa-calendar-alt mr-1"></i>
+                            {{ .PublishDate.Format "02 Jan, 2006" }}
+                        </li>
+                    </ul>
+
+                    {{ with .Params.categories }}
+                    <div class="mb-0 mt-1">
+                    {{ range . }}
+                    {{ $cat := . | lower | urlize }}
+                    <a href="{{ printf "categories/%s" $cat | relLangURL }}" class="badge badge-category mr-1 mb-1 d-inline-block">
+                        {{ . | lower | title }}
+                    </a>
+                    {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <div class="post-title mt-2 mb-2">
+                    <h3 class="mt-0 mb-1">
+                        <a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a>
+                    </h3>
+                    </div>
+
+                    <div class="post-content mb-1">
+                        <p class="text-body-black">{{ .Params.description | truncate 150 }}</p>
+                    </div>
+
+                    {{ with .Params.author }}
+                    <div class="post-author mb-2">
+                        <i class="fas fa-user mr-2"></i><span class="text-muted-soft">{{ . }}</span>
+                    </div>
+                    {{ end }}
+                    
+                    <a href="{{ .Permalink }}" class="btn btn-main mt-2">{{ i18n "learnMore" }}</a>
+                </div>
+            </article>
+            {{ "<!-- /single blog post -->" | safeHTML }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ "<!-- Blog Section End -->" | safeHTML }}
+{{ end }}

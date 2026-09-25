@@ -1,0 +1,41 @@
+
+enable    : true
+topTitle  : Novedades en la OfiLibre
+title     : Convocatorias abiertas y enlaces de interés
+item  :
+
+  - icon  : fas fa-chalkboard
+    title : Convocatoria de Materiales Docentes en Abierto 2026-2027
+    link  : /guias/convocatoria-asignaturas-abierto/
+    description : >
+      Convocatoria para reconocer el esfuerzo de creación de materiales docentes en acceso abierto, para personal docente de la URJC.
+
+  - icon  : fas fa-graduation-cap
+    title : MOOC sobre Ciencia Abierta y Cultura Libre
+    link  : https://urjcx.urjc.es/courses/cultura-libre-y-ciencia-abierta/
+    description : >
+      Seis módulos temáticos, materiales textuales, vídeos y ejercicios prácticos para entender qué son la ciencia abierta y la cultura libre, y cómo nos afectan.
+
+  - icon  : fas fa-mug-hot
+    title : Café con OfiLibre
+    link  : /acciones/cafes
+    description : >
+      Miércoles a las 10:00, 15 minutos en directo: un rato para charlar de forma relajada sobre los temas que nos preocupan. Sólo tienes que conectarte, escuchar y participar, si te apetece. Puedes ver también las grabaciones de los cafés pasados.
+
+  - icon  : fas fa-chalkboard
+    title : Asignaturas en Abierto
+    link  : https://online.urjc.es/es/para-futuros-estudiantes/asignaturas-en-abierto
+    description : >
+      Asignaturas en abierto de nuestra Universidad: materiales docentes en abierto para todo el mundo.
+
+  - icon  : fas fa-box-archive
+    title : ¡Tenemos BURJC Digital renovado!
+    link  : https://burjcdigital.urjc.es
+    description : >
+      Nuestro BURJC Digital (Archivo Abierto de la Universidad) ha sido actualizado: nueva imagen, más funcionalidad.
+
+  - icon  : fas fa-book
+    title : Monografías en Acceso Abierto
+    link  : https://monografias.urjc.es/
+    description : >
+      Monografías publicadas por la Editorial Academia Abierta de nuestra Universidad, todas en acceso abierto.

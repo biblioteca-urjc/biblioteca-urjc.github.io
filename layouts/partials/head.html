@@ -1,0 +1,70 @@
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+{{ hugo.Generator }}
+
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+{{ "<!-- Mobile Specific Meta -->" | safeHTML }}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-name" content="navigator-hugo" />
+
+{{ "<!-- Activa las animaciones de entrada solo si hay soporte y el usuario no pide menos movimiento (evita parpadeo: se ejecuta antes de pintar el body) -->" | safeHTML }}
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.documentElement.className += ' js-anim';
+  })();
+</script>
+
+{{ "<!-- Favicon -->" | safeHTML }}
+<link rel="shortcut icon" type="image/x-icon" href="{{ `favicons/faviconURJC.ico` | absURL }}" />
+
+{{ "<!-- SEO: canonical y alternativas de idioma -->" | safeHTML }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}
+
+{{ "<!-- Open Graph / Twitter Card -->" | safeHTML }}
+{{ $ogDesc := cond (ne (string .Description) "") (string .Description) (string .Site.Params.description) }}
+{{ $ogImage := "images/logos/banner-urjc.png" | absURL }}
+{{ with .Params.image }}{{ $ogImage = partial "resolve-image" . }}{{ end }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ $ogDesc }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:locale" content="{{ .Site.Language.LanguageCode }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ $ogDesc }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+
+{{ "<!-- Fonts: Titillium Web auto-hospedada (sin llamadas a Google). Las @font-face están en style.css -->" | safeHTML }}
+<link rel="preload" as="font" type="font/woff2" href="{{ `fonts/titillium-web/titillium-web-400-latin.woff2` | relURL }}" crossorigin>
+
+{{ "<!-- Stylesheets -->" | safeHTML }}
+{{ "<!-- Themefisher Icon font -->" | safeHTML }}
+<link rel="stylesheet" href="{{ `plugins/themefisher-font/style.css` | absURL }}">
+{{ "<!-- Bootstrap (v4, coherente con data-toggle del header) -->" | safeHTML }}
+<link rel="stylesheet" href="{{ `plugins/bootstrap/dist/css/bootstrap.min.css` | absURL }}">
+{{ "<!-- Lightbox -->" | safeHTML }}
+<link rel="stylesheet" href="{{ `plugins/lightbox2/dist/css/lightbox.min.css` | absURL }}">
+{{ "<!-- Slick Carousel -->" | safeHTML }}
+<link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick.css` | absURL }}">
+<link rel="stylesheet" href="{{ `plugins/slick-carousel/slick/slick-theme.css` | absURL }}">
+{{ "<!-- Font Awesome -->" | safeHTML }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+{{ "<!-- Main Stylesheet -->" | safeHTML }}
+{{ $styles := resources.Get "css/style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+</head>
