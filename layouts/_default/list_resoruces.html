@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section" id="resources-list">
+  <div class="container">
+    {{ with .Description }}
+    <div class="row mb-4">
+      <div class="col text-center">
+        <p>{{ . | markdownify }}</p>
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row">
+      {{ range .RegularPages }}
+      {{ $item := . }}
+      <article class="col-12 col-md-4 mb-4">
+        <div class="post-item h-100">
+          <a href="{{ $item.RelPermalink }}">
+            {{ with $item.Params.image }}
+            <div class="post-thumb post-thumb--ratio mb-2 shadow rounded">
+              <img src="{{ partial "resolve-image" . }}" alt="{{ $item.Title }}" loading="lazy" decoding="async">
+            </div>
+            {{ end }}
+            <h3 class="mt-2 mb-2">{{ $item.Title }}</h3>
+            {{ with $item.Description }}
+            <p class="text-body-black">{{ . | markdownify }}</p>
+            {{ end }}
+          </a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,96 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="blog-single section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h2>{{ .Title }}</h2>
+
+        {{ with .Params.image }}
+        <div class="resource-main-image post-thumb mb-4 shadow rounded">
+          <img src="{{ partial "resolve-image" . }}" alt="{{ $.Title }}" loading="lazy" decoding="async">
+        </div>
+        {{ end }}
+
+        {{ with .Params.external_url }}
+        <p class="mb-4">
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+            {{ if eq $.Site.Language.Lang "es" }}Acceder al recurso{{ else }}Access the resource{{ end }}
+          </a>
+        </p>
+        {{ end }}
+
+        {{ with .Params.search }}
+        <form class="resource-search-form mb-4" action="#" method="get"
+          data-search-template="{{ . }}" data-search-vid="34URJC_INST:34URJC_VU1"
+          data-search-scope="MyInst_and_CI" data-search-tab="Everything">
+          <label for="resource-search">
+            {{ if eq $.Site.Language.Lang "es" }}Buscar{{ else }}Search{{ end }}
+          </label>
+          <div class="input-group mt-2">
+            <input id="resource-search" class="form-control" type="search" name="search"
+              placeholder="{{ if eq $.Site.Language.Lang "es" }}Escribe una búsqueda{{ else }}Enter a search{{ end }}"
+              required>
+            <button class="btn btn-main" type="submit">
+              {{ if eq $.Site.Language.Lang "es" }}Buscar{{ else }}Search{{ end }}
+            </button>
+          </div>
+        </form>
+        {{ end }}
+
+        {{ with .Content }}
+        <div class="post-content">
+          {{ . }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.links }}
+        <div class="resource-links row mb-4">
+          {{ range . }}
+          {{ $link := . }}
+          <div class="col-12 col-sm-6 col-lg-3 mb-4">
+            <a class="resource-link-card" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+              {{ with .image }}
+              <img src="{{ . | relURL }}" alt="{{ $.Title }}: {{ $link.title }}" loading="lazy" decoding="async">
+              {{ end }}
+              <span>{{ .title }}</span>
+            </a>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ if .Params.search }}
+<script>
+  document.querySelectorAll('.resource-search-form').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const query = form.elements.search.value.trim();
+      if (!query) return;
+
+      const searchTemplate = form.dataset.searchTemplate;
+      if (searchTemplate.includes('{$query}')) {
+        window.location.href = searchTemplate.replace('{$query}', encodeURIComponent(query));
+        return;
+      }
+
+      const params = new URLSearchParams({
+        query: 'any,contains,' + query,
+        tab: form.dataset.searchTab,
+        search_scope: form.dataset.searchScope,
+        vid: form.dataset.searchVid,
+        offset: '0'
+      });
+      window.location.href = searchTemplate + '?' + params.toString();
+    });
+  });
+</script>
+{{ end }}
+
+{{ end }}

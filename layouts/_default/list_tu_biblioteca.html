@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section" id="library-sections">
+  <div class="container">
+    {{ with .Description }}
+    <div class="row mb-4">
+      <div class="col text-center">
+        <p>{{ . | markdownify }}</p>
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        {{ range .Pages.ByWeight }}
+        <article class="library-section-card mb-4">
+          <div class="library-section-card__body">
+            <h2 class="library-section-card__title">{{ .Title }}</h2>
+            {{ with .Description }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+            <a class="btn btn-main" href="{{ .RelPermalink }}">
+              {{ if eq $.Site.Language.Lang "es" }}Acceder{{ else }}Access{{ end }}
+            </a>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

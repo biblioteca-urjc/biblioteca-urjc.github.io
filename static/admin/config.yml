@@ -4,8 +4,9 @@ backend:
 media_folder: static
 public_folder: /
 collections:
-  - name: 'blog'
-    label: 'Blog'
+
+  - name: 'actualidad'
+    label: 'Actualidad'
     folder: 'content/spanish/blog'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
@@ -22,103 +23,142 @@ collections:
       - { label: 'Logo', name: 'image', widget: 'image', default: 'logos/logo-ofilibre-2025.jpg'}
       - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
 
-  - name: 'guias'
-    label: 'Guías'
-    folder: 'content/spanish/guias'
+  - name: 'tu-biblioteca'
+    label: 'Tu biblioteca'
+    folder: 'content/spanish/tu-biblioteca'
     create: true
     slug: '{{slug}}'
-    media_folder: '../../../static/guias/{{slug}}'
-    public_folder: '../../guias/{{slug}}'
+    media_folder: '../../../static/tu-biblioteca/{{slug}}'
+    public_folder: 'tu-biblioteca/{{slug}}'
     editor:
       preview: true
     fields:
       - { label: 'Título', name: 'title', widget: 'string' }
-      - { label: 'Fecha de publicación', name: 'date', widget: 'datetime',default: "{{now}}",  date_format: "YYYY-MM-DD"}
-      - { label: 'Descripción', name: 'description', widget: 'string' }
-      - { label: 'Logo', name: 'image', widget: 'image' }
-      - { label: 'Categorías', name: 'categories', widget: 'hidden', default: ["OfiLibre"]}
-      - { label: 'Etiquetas', name: 'tags', widget: 'list'}
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
+      - { label: 'Descripción', name: 'description', widget: 'string', required: false }
+      - { label: 'Categorías', name: 'categories', widget: 'list', required: false }
+      - { label: 'Etiquetas', name: 'tags', widget: 'list', required: false }
+      - { label: 'Imagen', name: 'image', widget: 'image', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
 
-  - name: 'fichas'
-    label: 'Fichas'
-    folder: 'content/spanish/fichas'
+  - name: 'bibliotecas'
+    label: 'Bibliotecas de campus'
+    folder: 'content/spanish/tu-biblioteca/bibliotecas-de-campus'
     create: true
     slug: '{{slug}}'
-    media_folder: '../../../static/fichas/{{slug}}'
-    public_folder: '../../fichas/{{slug}}'
     editor:
       preview: true
     fields:
       - { label: 'Título', name: 'title', widget: 'string' }
-      - { label: 'Fecha de publicación', name: 'date', widget: 'datetime',default: "{{now}}",  date_format: "YYYY-MM-DD"}
-      - { label: 'Logo', name: 'image', widget: 'image' }
-      - { label: 'Página web', name: 'website', widget: 'string' }
-      - { label: 'Página web (español)', name: 'website_es', widget: 'string', required: false }
-      - label: 'Licencias'
-        name: 'licenses'
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-      - { label: 'MyApps', name: 'myapps', widget: 'boolean', default: false }
-      - { label: 'Código fuente (URL)', name: 'source', widget: 'string' }
-      - label: 'Guías de instalación'
-        name: 'installs'
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-          - { label: 'Formato', name: 'kind', widget: 'string', required: false }
-      - label: 'Tutoriales'
-        name: 'tutorials'
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-          - { label: 'Formato', name: 'kind', widget: 'string', required: false }
-      - label: 'Extras'
-        name: 'others'
+      - { label: 'Descripción', name: 'description', widget: 'string', required: false }
+      - { label: 'Orden', name: 'weight', widget: 'number', value_type: 'int', default: 1 }
+      - { label: 'Imagen', name: 'image', widget: 'image', required: false }
+      - { label: 'Horario', name: 'hours', widget: 'string', required: false }
+      - { label: 'Teléfono', name: 'phone', widget: 'string', required: false }
+      - { label: 'Correo electrónico', name: 'email', widget: 'string', required: false }
+      - { label: 'Enlace para llegar', name: 'map_url', widget: 'string', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'normativa'
+    label: 'Normativa'
+    folder: 'content/spanish/tu-biblioteca/normativa'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Título', name: 'title', widget: 'string' }
+      - { label: 'Orden', name: 'weight', widget: 'number', value_type: 'int', default: 1 }
+      - { label: 'Enlace al documento', name: 'document_url', widget: 'string', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'formularios'
+    label: 'Formularios'
+    folder: 'content/spanish/tu-biblioteca/formularios'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Título', name: 'title', widget: 'string' }
+      - { label: 'Orden', name: 'weight', widget: 'number', value_type: 'int', default: 1 }
+      - { label: 'Enlace al formulario', name: 'form_url', widget: 'string', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'recursos'
+    label: 'Recursos'
+    folder: 'content/spanish/recursos'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '../../../static/recursos/{{slug}}'
+    public_folder: 'recursos/{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Título', name: 'title', widget: 'string' }
+      - { label: 'URL del buscador', name: 'search', widget: 'string', required: false }
+      - { label: 'Descripción', name: 'description', widget: 'string', required: false }
+      - { label: 'Categorías', name: 'categories', widget: 'list', required: false }
+      - { label: 'Etiquetas', name: 'tags', widget: 'list', required: false }
+      - { label: 'Enlace externo', name: 'external_url', widget: 'string', required: false }
+      - { label: 'Imagen', name: 'image', widget: 'image', required: false }
+      - label: 'Enlaces con imagen'
+        name: 'links'
         widget: 'list'
         required: false
         fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
+          - { label: 'Título', name: 'title', widget: 'string' }
           - { label: 'URL', name: 'url', widget: 'string' }
-      - label: 'Capturas de pantalla'
-        name: 'screenshots'
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'Archivo', name: 'file', widget: 'image' }
-          - { label: 'Atribución', name: 'attribution', widget: 'string', required: false }
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
+          - { label: 'Imagen', name: 'image', widget: 'image' }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
 
-  - name: 'presentaciones'
-    label: 'Presentaciones'
-    folder: 'content/spanish/pres'
+  - name: 'soy-estudiante'
+    label: 'Soy estudiante'
+    folder: 'content/spanish/soy-estudiante'
     create: true
     slug: '{{slug}}'
-    media_folder: '../../../static/pres/{{slug}}'
-    public_folder: '../../pres/{{slug}}'
+    media_folder: '../../../static/soy-estudiante/{{slug}}'
+    public_folder: 'soy-estudiante/{{slug}}'
     editor:
       preview: true
     fields:
       - { label: 'Título', name: 'title', widget: 'string' }
-      - { label: 'Fecha de publicación', name: 'date', widget: 'datetime',default: "{{now}}",  date_format: "YYYY-MM-DD"}
-      - { label: 'Descripción', name: 'description', widget: 'string' }
-      - { label: 'Logo', name: 'image', widget: 'image' }
-      - label: 'Transparencias'
-        name: 'transpas'
-        widget: 'object'
-        fields:
-          - { label: 'Archivo PDF', name: 'pdf', widget: 'file' }
-          - { label: 'Archivo ODP', name: 'odp', widget: 'file' }
-      - label: 'Extras'
-        name: 'extras'
-        required: false
-        widget: 'list'
-        fields:
-          - { label: 'Nombre', name: 'name', widget: 'string' }
-          - { label: 'URL', name: 'url', widget: 'string' }
-      - { label: 'Cuerpo', name: 'body', widget: 'markdown' }
+      - { label: 'Descripción', name: 'description', widget: 'string', required: false }
+      - { label: 'Categorías', name: 'categories', widget: 'list', required: false }
+      - { label: 'Etiquetas', name: 'tags', widget: 'list', required: false }
+      - { label: 'Enlace externo', name: 'external_url', widget: 'string', required: false }
+      - { label: 'Imagen', name: 'image', widget: 'image', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
 
+  - name: 'soy-pdi'
+    label: 'Soy PDI'
+    folder: 'content/spanish/soy-pdi'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '../../../static/soy-pdi/{{slug}}'
+    public_folder: 'soy-pdi/{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Título', name: 'title', widget: 'string' }
+      - { label: 'Descripción', name: 'description', widget: 'string', required: false }
+      - { label: 'Categorías', name: 'categories', widget: 'list', required: false }
+      - { label: 'Etiquetas', name: 'tags', widget: 'list', required: false }
+      - { label: 'Enlace externo', name: 'external_url', widget: 'string', required: false }
+      - { label: 'Imagen', name: 'image', widget: 'image', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }
+  
+  - name: 'avisos'
+    label: 'Avisos'
+    folder: 'content/spanish/avisos'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '../../../static/avisos/{{slug}}'
+    public_folder: 'avisos/{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Título', name: 'title', widget: 'string', required: false }
+      - { label: 'Fecha', name: 'date', widget: 'datetime', required: false, date_format: 'YYYY-MM-DD' }
+      - { label: 'Imagen', name: 'image', widget: 'image', required: false }
+      - { label: 'Enlace', name: 'link', widget: 'string', required: false }
+      - { label: 'Cuerpo', name: 'body', widget: 'markdown', required: false }

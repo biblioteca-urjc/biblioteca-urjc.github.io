@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section" id="regulations-list">
+  <div class="container">
+    {{ with .Description }}
+    <div class="row mb-4">
+      <div class="col text-center">
+        <p>{{ . | markdownify }}</p>
+      </div>
+    </div>
+    {{ end }}
+
+    {{ with .Content }}
+    <div class="row mb-4">
+      <div class="col-md-10 mx-auto post-content">
+        {{ . }}
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        {{ if not .Pages }}
+        <p class="text-center">
+          {{ if eq .Site.Language.Lang "es" }}No hay normativa publicada todavía.{{ else }}No regulations have been published yet.{{ end }}
+        </p>
+        {{ end }}
+
+        {{ range .Pages.ByWeight }}
+        <article class="regulation-item mb-4">
+          <h2 class="regulation-item__title">{{ .Title }}</h2>
+          <div class="post-content">
+            {{ .Content }}
+          </div>
+          {{ with .Params.document_url }}
+          <a class="btn btn-main regulation-item__link" href="{{ . }}" target="_blank" rel="noopener noreferrer">
+            {{ if eq $.Site.Language.Lang "es" }}Ver normativa{{ else }}View regulations{{ end }}
+          </a>
+          {{ end }}
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

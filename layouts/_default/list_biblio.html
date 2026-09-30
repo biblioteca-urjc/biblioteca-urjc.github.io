@@ -1,0 +1,81 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="section" id="libraries-list">
+  <div class="container">
+    {{ with .Description }}
+    <div class="row mb-4">
+      <div class="col text-center">
+        <p>{{ . | markdownify }}</p>
+      </div>
+    </div>
+    {{ end }}
+
+    {{ with .Content }}
+    <div class="row mb-4">
+      <div class="col-md-10 mx-auto post-content">
+        {{ . }}
+      </div>
+    </div>
+    {{ end }}
+
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        {{ if not .Pages }}
+        <p class="text-center">
+          {{ if eq .Site.Language.Lang "es" }}No hay bibliotecas publicadas todavía.{{ else }}No libraries have been published yet.{{ end }}
+        </p>
+        {{ end }}
+        {{ range .Pages.ByWeight }}
+        <article class="library-item mb-4">
+          <div class="library-item__content row align-items-center">
+            <div class="col-12 col-md-7 post-content">
+              <h2 class="library-item__title">{{ .Title }}</h2>
+
+              {{ with .Params.hours }}
+              <p><strong>{{ if eq $.Site.Language.Lang "es" }}Horario{{ else }}Opening hours{{ end }}:</strong> {{ . }}</p>
+              {{ end }}
+
+              {{ with .Params.address }}
+              <p><strong>{{ if eq $.Site.Language.Lang "es" }}Dirección{{ else }}Address{{ end }}:</strong> {{ . }}</p>
+              {{ end }}
+
+              {{ with .Params.phone }}
+              <p><strong>{{ if eq $.Site.Language.Lang "es" }}Teléfono{{ else }}Phone{{ end }}:</strong> <a href="tel:{{ . }}">{{ . }}</a></p>
+              {{ end }}
+
+              {{ with .Params.email }}
+              <p><strong>{{ if eq $.Site.Language.Lang "es" }}Correo electrónico{{ else }}Email{{ end }}:</strong> <a href="mailto:{{ . }}">{{ . }}</a></p>
+              {{ end }}
+
+              {{ .Content }}
+
+              <div class="library-item__links">
+                {{ with .Params.map_url }}
+                <a class="btn btn-main library-location-link mr-2 mb-2" href="{{ . }}" target="_blank" rel="noopener noreferrer">
+                  {{ if eq $.Site.Language.Lang "es" }}Cómo llegar{{ else }}Directions{{ end }}
+                </a>
+                {{ end }}
+                {{ with .Params.website }}
+                <a class="btn btn-main mb-2" href="{{ . }}" target="_blank" rel="noopener noreferrer">
+                  {{ if eq $.Site.Language.Lang "es" }}Más información{{ else }}More information{{ end }}
+                </a>
+                {{ end }}
+              </div>
+            </div>
+
+            {{ with .Params.image }}
+            <div class="col-12 col-md-5">
+              <img class="library-item__image" src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async">
+            </div>
+            {{ end }}
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

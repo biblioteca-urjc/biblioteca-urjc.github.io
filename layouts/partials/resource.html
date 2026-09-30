@@ -1,0 +1,58 @@
+{{ $resources := where .Site.RegularPages "Section" "recursos" }}
+{{ $searchableResources := where $resources "Params.search" "ne" nil }}
+{{ with first 1 $searchableResources }}
+  {{ range . }}
+  <section class="resource-search-section section" aria-labelledby="resource-search-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          
+          <form class="resource-search-form" action="#" method="get"
+            data-search-template="{{ .Params.search }}"
+            data-search-vid="34URJC_INST:34URJC_VU1"
+            data-search-scope="MyInst_and_CI" data-search-tab="Everything">
+            <label for="resource-partial-search">
+              {{ if eq $.Site.Language.Lang "es" }}Buscar{{ else }}Search{{ end }}
+            </label>
+            <div class="input-group mt-2">
+              <input id="resource-partial-search" class="form-control" type="search" name="search"
+                placeholder="{{ if eq $.Site.Language.Lang "es" }}Escribe una búsqueda{{ else }}Enter a search{{ end }}"
+                required>
+              <button class="btn btn-main" type="submit">
+                {{ if eq $.Site.Language.Lang "es" }}Buscar{{ else }}Search{{ end }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+<script>
+  document.querySelectorAll('.resource-search-form').forEach(function (form) {
+    if (form.dataset.searchReady === 'true') return;
+    form.dataset.searchReady = 'true';
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const query = form.elements.search.value.trim();
+      if (!query) return;
+
+      const searchTemplate = form.dataset.searchTemplate;
+      if (searchTemplate.includes('{$query}')) {
+        window.location.href = searchTemplate.replace('{$query}', encodeURIComponent(query));
+        return;
+      }
+
+      const params = new URLSearchParams({
+        query: 'any,contains,' + query,
+        tab: form.dataset.searchTab,
+        search_scope: form.dataset.searchScope,
+        vid: form.dataset.searchVid,
+        offset: '0'
+      });
+      window.location.href = searchTemplate + '?' + params.toString();
+    });
+  });
+</script>

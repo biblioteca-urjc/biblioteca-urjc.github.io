@@ -1,66 +1,28 @@
 # Navbar Menus
+[[nav]]
+name = "tu-biblioteca"
+url = "tu-biblioteca/"
+weight = 1
 
 [[nav]]
-name = "blog"
-url = "blog/"
-weight = 5
+name = "recursos"
+url = "recursos/"
+weight = 2
 
 [[nav]]
-name = "contacto"
-url = "contacto/"
-weight = 6
-
+name = "soy-estudiante"
+url = "soy-estudiante/"
+weight = 3
 
 [[nav]]
-name = "biblioguias"
-url = "biblioguias/"
-weight = 7
-hasChildren = true
-
-  [[nav]]
-  parent = "biblioguias"
-  name = "Soy estudiante"
-  url = "https://urjc.libguides.com/nuevosestudiantes/"
-  weight = 1
-  target = "_blank"
-  
-  [[nav]]
-  parent = "biblioguias"
-  name = "Soy PDI"
-  url = "pdi/"
-  weight = 2
-
-  [[nav]]
-  parent = "biblioguias"
-  name = "Temáticas"
-  url = "tematicas/"
-  weight = 3
-
-  [[nav]]
-  parent = "biblioguias"
-  name = "TFG o TFM"
-  url = "trabajosfinales/"
-  weight = 4
-
-  [[nav]]
-  parent = "biblioguias"
-  name = "Evaluación de la investicación"
-  url = "evaluaciones/"
-  weight = 5
-
-  [[nav]]
-  parent = "biblioguias"
-  name = "Ciencia Abierta"
-  url = "cienciaabierta/"
-  weight = 6
-
+name = "soy-pdi"
+url = "soy-pdi/"
+weight = 4
 
 [[nav]]
 name = "buscar"
 url = "buscar/"
-weight = 8
-
-
+weight = 5
 
 # Footer acciones Menu
 [[acciones]]

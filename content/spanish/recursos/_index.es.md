@@ -1,4 +1,4 @@
 ---
 title: "Recursos"
-layout: "recursos" 
+layout: "list_resoruces"
 ---

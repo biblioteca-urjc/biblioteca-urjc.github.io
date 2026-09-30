@@ -4,11 +4,20 @@ other = "Inicio"
 [ofilibre]
 other = "OfiLibre"
 
+[tu-biblioteca]
+other = "Tu biblioteca"
+
+[soy-estudiante]
+other = "Soy estudiante"
+
+[soy-pdi]
+other = "Soy PDI"
+
 [acciones]
 other = "acciones"
 
 [recursos]
-other = "recursos"
+other = "Recursos"
 
 [blog]
 other = "Blog"

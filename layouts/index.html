@@ -1,6 +1,28 @@
 {{ define "main" }}
-  {{ partial "blog.html" . }}
 
-  {{ partial "contacto.html" . }}
+{{ partial "resource.html" . }}
+
+<div class="container">
+  <p>La Biblioteca de la Universidad Rey Juan Carlos es un servicio de apoyo a la docencia e investigación presente en
+    sus cinco campus. Atiende tanto a la comunidad universitaria como a usuarios externos, ofreciendo guías
+    personalizadas para cada perfil. Además, destaca por su sistema de mejora continua y su participación en redes de
+    colaboración.
+  </p>
+  <h4 class="text-center">
+    Horario de las bibliotecas: de 9:00h a 20:30h
+  </h4>
+</div>
+
+
+{{ partial "avisos.html" . }}
+
+{{ partial "blog.html" . }}
+
+<video class="video-section" controls>
+  <source src="{{ "biblioteca video.mp4" | relURL }}" type="video/mp4"  >
+  {{ if eq $.Site.Language.Lang "es" }}Tu navegador no soporta la etiqueta de vídeo.{{ else }}Your browser does not support the video tag.{{ end }}
+</video>
+
+{{ partial "contacto.html" . }}
 
 {{ end }}

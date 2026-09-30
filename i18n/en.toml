@@ -16,6 +16,15 @@ other = "Contact"
 [search]
 other = "Search"
 
+[tu-biblioteca]
+other = "Your library"
+
+[soy-estudiante]
+other = "Students"
+
+[soy-pdi]
+other = "Teaching and research staff"
+
 [blog]
 other = "Blog"
 
@@ -108,4 +117,3 @@ other = "Social networks"
 
 [learnMore]
 other = "Learn more"
-
