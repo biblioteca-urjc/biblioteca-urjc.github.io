@@ -8,6 +8,8 @@ tags:
   - clubdelectura
 image: https://www.urjc.es/images/Clublectura.jpeg
 ---
+![](https://clubdelecturaburjc.wordpress.com/)
+
 ¡Vuelve nuestro club de lectura digital! Y en esta 5ª edición os traemos una novela entrañable, de esas que dejan el corazón calentito… Ya os adelantamos que, aunque la peli es maravillosa…¡el libro es aún mejor!
 
 En esta ocasión moderará la edición Carmen Soler, de la biblioteca del campus de Fuenlabrada. Leeremos la novela del 6 de octubre al 5 de noviembre.
