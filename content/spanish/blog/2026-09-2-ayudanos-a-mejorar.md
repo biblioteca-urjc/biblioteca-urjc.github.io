@@ -1,6 +1,6 @@
 ---
-title: "Ayudanos a mejorar"
-date: 2026-09-01T05:42:14.141Z
+title: Ayudanos a mejorar
+date: 2026-03-06
 description: Articulo de demostración.
 categories:
   - Universidad
