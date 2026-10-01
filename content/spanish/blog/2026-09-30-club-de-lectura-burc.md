@@ -1,12 +1,11 @@
 ---
-title: Club de lectura BURC
+title: Club de lectura BURJC
 date: 2026-10-01
 description: En Octubre leemos "Tomates verdes fritos"
 categories:
   - Universidad
 tags:
   - clubdelectura
-  - ""
 image: https://www.urjc.es/images/Clublectura.jpeg
 ---
 ¡Vuelve nuestro club de lectura digital! Y en esta 5ª edición os traemos una novela entrañable, de esas que dejan el corazón calentito… Ya os adelantamos que, aunque la peli es maravillosa…¡el libro es aún mejor!
