@@ -1,22 +1,14 @@
 ---
-title: "Apertura extraordinaria por exámenes Navidad 2025"
-date: 2026-09-01T05:42:14.141Z
-description: Articulo de demostración.
+title: Apertura extraordinaria por exámenes Navidad 2025
+date: 2026-12-09
+description: Horario de apertura por exámenes en diciembre y enero
 categories:
   - Universidad
   - Equipos
 tags:
-  - ciencia abierta
-image: blog/calendario.png
+  - calendario
+image: https://www.urjc.es/images/Biblioteca/Actualidad/Apertura_Extraordinaria_Dic_25-Ene_26.jpg
 ---
-Ya está activa la encuesta de satisfacción 2025 sobre los servicios que la Biblioteca URJC ofrece a través del Consorcio Madroño.
+Del 27 de diciembre al 17 de enero, la Biblioteca abrirá los sábados 20 de diciembre y 3, 10 y 17 de enero.
 
-El Consorcio impulsa proyectos clave en Ciencia Abierta, datos de investigación, apoyo al personal investigador y servicios como el Pasaporte Madroño, el préstamo interbibliotecario o el portal Singularis.
-
-👉 Accede a la Encuesta 2025 aquí. 
-
-⏳ Disponible hasta el 6 de marzo de 2026.
-
-🙌 Tu opinión es fundamental para seguir mejorando.
-
-¡Gracias por tu tiempo y colaboración! 
+HORARIO 9:00 a 21:00
