@@ -15,4 +15,4 @@ La Biblioteca organiza la actividad formativa sobre **“Búsqueda y gestión de
 
 Esta modalidad formativa responde tanto a las solicitudes de formación realizadas por el profesorado para su alumnado como a las planteadas por cualquier miembro de la comunidad universitaria. Las sesiones se diseñan y adaptan a las necesidades específicas de cada solicitante o grupo, ofreciendo contenidos personalizados sobre el uso de recursos de información y el manejo de herramientas especializadas.
 
-![](soy-estudiante/formación/fcarta.png)
+![](soy-estudiante/formación/fcarta.png "cursos")
