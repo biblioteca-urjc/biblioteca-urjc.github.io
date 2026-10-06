@@ -1,25 +1,27 @@
 ---
+search: https://brain.urjc.es/discovery/search?query=any,contains,{$query}&tab=Everything&search_scope=MyInst_and_CI&vid=34URJC_INST:34URJC_VU1&offset=0
+layout: single_resource
+title: Buscador de Recursos BRAIN
 weight: 1
-title: "El Buscador de Recursos BRAIN"
-description: "Permite encontrar documentos y contenidos impresos y digitales disponibles para la comunidad universitaria."
-layout: "single_resource"
-categories: ["Biblioteca"]
-search: "https://brain.urjc.es/discovery/search?query=any,contains,{$query}&tab=Everything&search_scope=MyInst_and_CI&vid=34URJC_INST:34URJC_VU1&offset=0"
-external_url: "https://brain.urjc.es/"
-image: "images/logos/logo-urjc-square.png"
+description: Permite encontrar documentos y contenidos impresos y digitales
+  disponibles para la comunidad universitaria.
+categories:
+  - Biblioteca
+external_url: https://brain.urjc.es/
+image: images/logos/logo-urjc-square.png
 links:
-  - title: "Colección impresa"
-    url: "https://brain.urjc.es/primo-explore/search?tab=tab2&search_scope=TAB2_SCOPE1&vid=34URJC_VU1&lang=es_ES"
-    image: "/recursos/buscador-de-recursos-brain/coleccion-impresa.webp"
-  - title: "Colección electrónica"
-    url: "https://brain.urjc.es/primo-explore/search?tab=tab3&search_scope=TAB3_SCOPE1&vid=34URJC_VU1&lang=es_ES"
-    image: "/recursos/buscador-de-recursos-brain/coleccion-electronica.webp"
-  - title: "Catálogo Madroño"
-    url: "https://brain.urjc.es/primo-explore/search?query=any,contains,&tab=tab4&search_scope=TAB4_SCOPE1&vid=34URJC_VU1&lang=es_ES&offset=0"
-    image: "/recursos/buscador-de-recursos-brain/catalogo-madrono.webp"
-  - title: "Guías BRAIN"
-    url: "https://urjc.libguides.com/brain"
-    image: "/recursos/buscador-de-recursos-brain/guias-brain.webp"
+  - title: Colección impresa
+    url: https://brain.urjc.es/primo-explore/search?tab=tab2&search_scope=TAB2_SCOPE1&vid=34URJC_VU1&lang=es_ES
+    image: /recursos/buscador-de-recursos-brain/coleccion-impresa.webp
+  - title: Colección electrónica
+    url: https://brain.urjc.es/primo-explore/search?tab=tab3&search_scope=TAB3_SCOPE1&vid=34URJC_VU1&lang=es_ES
+    image: /recursos/buscador-de-recursos-brain/coleccion-electronica.webp
+  - title: Catálogo Madroño
+    url: https://brain.urjc.es/primo-explore/search?query=any,contains,&tab=tab4&search_scope=TAB4_SCOPE1&vid=34URJC_VU1&lang=es_ES&offset=0
+    image: /recursos/buscador-de-recursos-brain/catalogo-madrono.webp
+  - title: Guías BRAIN
+    url: https://urjc.libguides.com/brain
+    image: /recursos/buscador-de-recursos-brain/guias-brain.webp
 ---
 
 [Busqueda avanzada](https://brain.urjc.es/primo-explore/search?vid=34URJC_VU1&lang=es_ES&mode=advanced)
