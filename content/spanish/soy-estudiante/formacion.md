@@ -3,7 +3,7 @@ title: Formación
 layout: single_resource
 categories: Formación
 external_url: https://www.urjc.es/burjc/estudiar/formacion
-image: soy-estudiante/formación/fcarta.png
+image: ""
 ---
 El Servicio de Formación de Usuarios de la Biblioteca tiene como objetivo formar a los miembros de la comunidad universitaria en el uso de los servicios y recursos de la Biblioteca, así como ofrecer herramientas de aprendizaje para utilizar y valorar todo tipo de fuentes de información. \
 \
